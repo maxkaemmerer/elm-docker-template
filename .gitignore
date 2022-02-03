@@ -1,0 +1,9 @@
+# elm-package generated files
+elm-stuff
+# elm-repl generated files
+repl-temp-*
+deployment/frontend
+deployment/docker-compose-deployed.yml
+end2end/frontend
+end2end/node_modules
+end2end/cypress/screenshots

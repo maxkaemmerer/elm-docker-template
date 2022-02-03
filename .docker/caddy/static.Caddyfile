@@ -1,0 +1,8 @@
+elm-app.static:80/* {
+    try_files {path} /
+    header /img/* Cache-Control max-age=31536000
+    header /static/* Cache-Control max-age=31536000
+    encode gzip
+    root * /opt/frontend/build
+    file_server
+}

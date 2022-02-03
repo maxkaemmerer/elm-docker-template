@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  caddy:
+    image: caddy:2.4.6
+    volumes:
+      - ./../.docker/caddy/static.Caddyfile:/etc/caddy/Caddyfile
+      - ./frontend:/opt/frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      ci:
+        aliases:
+         - elm-app.static
+  
+  cypress:
+    ipc: host
+    image: cypress/included:9.4.1
+    working_dir: /opt/cypress
+    volumes:
+      - ./:/opt/cypress
+    entrypoint: ["tail", "-f", "/dev/null"]
+    depends_on:
+      - caddy
+    networks:
+      - ci
+
+networks:
+  ci:

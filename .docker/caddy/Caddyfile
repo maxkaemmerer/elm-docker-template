@@ -1,0 +1,5 @@
+import static.Caddyfile
+
+elm-app.dynamic:80 {
+    reverse_proxy frontend:3000
+}
