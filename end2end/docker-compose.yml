@@ -5,7 +5,7 @@ services:
     image: caddy:2.4.6
     volumes:
       - ./../.docker/caddy/static.Caddyfile:/etc/caddy/Caddyfile
-      - ./frontend:/opt/frontend
+      - ./../frontend/build:/opt/frontend/build
     ports:
       - "80:80"
       - "443:443"
