@@ -14,6 +14,10 @@ Then(/^I do not see text "([^"]*)" in body$/, function (text) {
     cy.screenshot();
 });
 
-When(/^I open tab "([^"]*)"$/, function (tab) {
-    cy.get('#' + tab).click();
+When(/^I click increment$/, function () {
+    cy.get('button:nth-of-type(1)').click();
+});
+
+When(/^I click decrement$/, function () {
+    cy.get('button:nth-of-type(2)').click();
 });
