@@ -15,9 +15,6 @@ test:
 	cd frontend && ./node_modules/.bin/elm-app test
 prepare-e2e:
 	docker-compose down --remove-orphans || true
-	rm -rf end2end/frontend
-	mkdir -p end2end/frontend
-	cp -r frontend/build end2end/frontend/
 	cd end2end && docker-compose down --remove-orphans || true
 	cd end2end && docker-compose up -d --build
 check: e2e-up e2e test format e2e-down

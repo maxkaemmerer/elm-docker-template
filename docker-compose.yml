@@ -11,7 +11,7 @@ services:
     volumes:
       - ./.docker/caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./.docker/caddy/static.Caddyfile:/etc/caddy/static.Caddyfile
-      - ./frontend:/opt/frontend
+      - ./frontend/build:/opt/frontend/build
   
   frontend:
     image: maxkaemmerer/docker-elm:1.0.0
