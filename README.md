@@ -5,14 +5,15 @@ This is a small template that sets you up with a local dev environment using Elm
 
 ## Setup
 1. Run `git clone git@github.com:maxkaemmerer/elm-docker-template.git my-elm-app` (Replace my-elm-app with whatever name you want)
-2. Remove the `.git` directory and init a new git repository like so `cd my-elm-app && rm -rf .git && git init`
-3. Add `127.0.0.1 elm-app.dynamic` and `127.0.0.1 elm-app.static` to your /etc/hosts. You can of course change the host, just make sure to change it in the following files.
+2. Remain on branch `main` if you want the template with routing and swap to `simple` for a, who would have thought, simpler version without routing by running `git switch simple`.
+3. Remove the `.git` directory and init a new git repository like so `cd my-elm-app && rm -rf .git && git init`
+4. Add `127.0.0.1 elm-app.dynamic` and `127.0.0.1 elm-app.static` to your /etc/hosts. You can of course change the host, just make sure to change it in the following files.
     * `.docker/caddy/static.Caddyfile` 
     * `.docker/caddy/Caddyfile`  
     * `end2end/docker-compose.yml`
     * `end2end/cypress.json`
-4. execute `make up`
-5. visit `http://elm-app.dynamic` for the hot-reloaded site, or `http://elm-app.static` for the version last built with `make build`
+5. execute `make up`
+6. visit `http://elm-app.dynamic` for the hot-reloaded site, or `http://elm-app.static` for the version last built with `make build`
 
 ## E2E Note
 The e2e environment only works with the statically built version of the app (`make build`), so you'll have to rebuild the app when you are working on fixing and adding tests. This is on purpose since I want to ensure that we run these tests against an environment as close to production as possible, so without hot reloading and debugging etc.
