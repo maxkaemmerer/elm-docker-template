@@ -21,3 +21,7 @@ When(/^I click increment$/, function () {
 When(/^I click decrement$/, function () {
     cy.get('button:nth-of-type(2)').click();
 });
+
+When(/^I type "([^"]*)"$/, function (input) {
+    cy.get('body').type(input);
+});
