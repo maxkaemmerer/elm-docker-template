@@ -2,10 +2,10 @@ name: Code Quality CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, simple ]
   
   pull_request:
-    branches: [ main ]
+    branches: [ main, simple ]
 
 jobs:
   build:
