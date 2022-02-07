@@ -14,3 +14,7 @@ node_modules
 .DS_Store
 
 .elm
+
+.parcel-cache
+
+dist
