@@ -8,9 +8,18 @@
   "author": "Max Kämmerer",
   "license": "MIT",
   "devDependencies": {
-    "create-elm-app": "^5.22.0",
+    "@parcel/packager-raw-url": "^2.2.1",
+    "@parcel/transformer-elm": "^2.2.1",
+    "@parcel/transformer-webmanifest": "^2.2.1",
     "elm": "^0.19.1-5",
     "elm-format": "^0.8.5",
-    "elm-test": "^0.19.1-revision7"
-  }
+    "elm-test": "^0.19.1-revision7",
+    "parcel": "^2.2.1"
+  },
+  "scripts": {
+    "start": "parcel serve -p 3000 public/index.html public/**/* --dist-dir build",
+    "build": "parcel build public/index.html --dist-dir build",
+    "test": "elm-test"
+  },
+  "browserslist": "last 2 Safari versions, last 2 Chrome versions"
 }
