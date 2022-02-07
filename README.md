@@ -33,8 +33,8 @@ https://plugins.jetbrains.com/plugin/10268-elm
 The e2e environment only works with the statically built version of the app (`make build`), so you'll have to rebuild the app when you are working on fixing and adding tests. This is on purpose since I want to ensure that we run these tests against an environment as close to production as possible, so without hot reloading and debugging etc.
 
 ## Make commands
-### `make init`
-Installs all global dependencies (You should only need to do this once).
+### `make install-editor-deps`
+Installs global dependencies that might be needed by Elm editor plugins.(You should only need to do this once and only if your editor/plugin can't resolve elm, elm-format or elm-test).
 
 ### `make install`
 Installs all local dependencies for the Elm and e2e app.
