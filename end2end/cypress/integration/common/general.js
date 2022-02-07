@@ -9,6 +9,14 @@ Then(/^I see text "([^"]*)" in body$/, function (text) {
     cy.screenshot();
 });
 
+Then(/^I see img with src "([^"]*)" in body$/, function (src) {
+    cy.get('body ')
+        .find(`img[src="${src}"]`)
+        .should('have.length', 1)
+        .should('be.visible');
+    cy.screenshot();
+});
+
 Then(/^I do not see text "([^"]*)" in body$/, function (text) {
     cy.get('body').contains(text).should('not.exist');
     cy.screenshot();
