@@ -6,14 +6,15 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
     volumes:
       - ./.docker/caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./.docker/caddy/static.Caddyfile:/etc/caddy/static.Caddyfile
       - ./frontend/build:/opt/frontend/build
   
   frontend:
-    image: maxkaemmerer/docker-elm:1.0.0
+    build: 
+      context: ./.docker/elm
     restart: unless-stopped
     volumes:
       - ./frontend:/opt/app
+    command: ["yarn", "run", "start"]

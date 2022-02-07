@@ -1,8 +1,10 @@
+install-editor-deps:
+	npm i -g elm elm-format elm-test
 install:
 	cd end2end && yarn install
 	cd frontend && yarn install
 build:
-	cd frontend && ./node_modules/.bin/elm-app build
+	cd frontend && yarn run build
 up: install build e2e-down
 	docker-compose up -d --build
 down:
@@ -12,7 +14,7 @@ validate-format:
 format:
 	cd frontend && ./node_modules/.bin/elm-format src tests --yes
 test:
-	cd frontend && ./node_modules/.bin/elm-app test
+	cd frontend && yarn run test
 prepare-e2e:
 	docker-compose down --remove-orphans || true
 	cd end2end && docker-compose down --remove-orphans || true
