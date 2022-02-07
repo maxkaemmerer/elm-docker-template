@@ -10,6 +10,13 @@ Then(/^I see text "([^"]*)" in body$/, function (text) {
 });
 
 Then(/^I see img with src "([^"]*)" in body$/, function (src) {
+    cy.request({
+        url: src,
+        failOnStatusCode: false,
+    }).then((resp) => {
+        expect(resp.status).to.eq(200);
+    });
+
     cy.get('body ')
         .find(`img[src="${src}"]`)
         .should('have.length', 1)
