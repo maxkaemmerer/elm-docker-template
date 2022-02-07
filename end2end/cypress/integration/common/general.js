@@ -19,8 +19,7 @@ Then(/^I see img with src "([^"]*)" in body$/, function (src) {
 
     cy.get('body ')
         .find(`img[src="${src}"]`)
-        .should('have.length', 1)
-        .should('be.visible');
+        .should('have.length', 1);
     cy.screenshot();
 });
 
