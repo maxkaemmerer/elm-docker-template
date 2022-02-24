@@ -17,7 +17,7 @@
     "parcel": "^2.2.1"
   },
   "scripts": {
-    "start": "parcel serve -p 3000 public/index.html public/**/* --dist-dir build",
+    "start": "parcel serve -p 3000 public/index.html public/**/* --dist-dir dist",
     "build": "parcel build public/index.html --dist-dir build",
     "test": "elm-test"
   },
